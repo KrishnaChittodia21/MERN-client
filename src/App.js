@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import NavBar from './components/Navbar';
-import { Home, Profile, SignUp, Login } from './components/screens'
+import { Home, Profile, SignUp, Login, CreatePost } from './components/screens'
 import './App.css';
 
 function App() {
@@ -19,6 +19,9 @@ function App() {
       </Route>
       <Route path="/profile">
         <Profile />
+      </Route>
+      <Route path="/create">
+        <CreatePost />
       </Route>
     </BrowserRouter>
   );
