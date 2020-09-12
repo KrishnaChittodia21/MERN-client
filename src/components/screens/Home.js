@@ -9,7 +9,7 @@ const Home = () => {
           <img src="https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
         </div>
         <div className="card-content">
-          <i class="material-icons" style={{color: "red"}}>favorite</i>
+          <i className="material-icons" style={{color: "red"}}>favorite</i>
           <h6>title</h6>
           <p>this is amazing picture</p>
           <input type="text" placeholder="add comment" />
@@ -21,7 +21,7 @@ const Home = () => {
           <img src="https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
         </div>
         <div className="card-content">
-          <i class="material-icons" style={{color: "red"}}>favorite</i>
+          <i className="material-icons" style={{color: "red"}}>favorite</i>
           <h6>title</h6>
           <p>this is amazing picture</p>
           <input type="text" placeholder="add comment" />
@@ -33,7 +33,7 @@ const Home = () => {
           <img src="https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
         </div>
         <div className="card-content">
-          <i class="material-icons" style={{color: "red"}}>favorite</i>
+          <i className="material-icons" style={{color: "red"}}>favorite</i>
           <h6>title</h6>
           <p>this is amazing picture</p>
           <input type="text" placeholder="add comment" />
