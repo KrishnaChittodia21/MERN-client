@@ -33,6 +33,9 @@ const SignUp = () => {
         history.push('/login')
       }
     })
+    .catch((err) => {
+      console.log(err);
+    })
   }
   return (
     <div className="my-card">
