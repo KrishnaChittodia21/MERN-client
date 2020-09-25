@@ -37,7 +37,7 @@ const CreatePost = () => {
         console.log(err);
       })
     }
-  }, url)
+  }, [url])
   const postDetails= () => {
     const data = new FormData();
     data.append("file", image);
