@@ -4,6 +4,7 @@ import SignUp from './SignUp';
 import Profile from './Profile';
 import CreatePost from './CreatePost';
 import UserProfile from './UserProfile';
+import SubscribedUserPost from './SubscribedUserPost';
 
 export {
   Login,
@@ -12,4 +13,5 @@ export {
   Profile,
   CreatePost,
   UserProfile,
+  SubscribedUserPost,
 }
