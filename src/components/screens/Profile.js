@@ -5,7 +5,6 @@ const Profile = () => {
   const [myPics, setPics] = useState([]);
   const { state, dispatch } = useContext(UserContext);
   const [image, setImage] = useState("");
-  const [url, setUrl] = useState("");
   useEffect(() => {
     fetch('/mypost', {
       headers: {
@@ -36,9 +35,22 @@ const Profile = () => {
     })
     .then((res) => res.json())
     .then((data) => {
-      setUrl(data.url);
-      localStorage.setItem('user', JSON.stringify({...state, pic: data.url }))
-      dispatch({ type: 'UPDATEPIC', payload: data.url})
+      fetch('updateprofilepic', {
+        method: 'put',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer '+ localStorage.getItem('jwt')
+        },
+        body: JSON.stringify({
+          pic: data.url
+        })
+      })
+      .then( res => res.json())
+      .then( result => {
+        console.log(result)
+        localStorage.setItem('user', JSON.stringify({...state, pic: result.pic }))
+        dispatch({ type: 'UPDATEPIC', payload: result.pic})
+      })
     })
     .catch((err) => {
       console.log(err);
@@ -69,10 +81,6 @@ const Profile = () => {
             </div>
           </div>
         </div> 
-        <button className="btn waves-effect waves-light #64b5f6 blue darken-1"
-          style={{ margin: '10px 0px 10px 52px'}}
-          onClick={() => updateProfilePic()}
-        >Update pic</button>
         <div className="file-field input-field" style={{ margin: '10px'}}>
           <div className="btn #64b5f6 blue darken-1">
             <span>Update pic</span>
