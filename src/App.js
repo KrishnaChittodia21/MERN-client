@@ -1,7 +1,8 @@
 import React, { useEffect, createContext, useReducer, useContext } from 'react';
 import {BrowserRouter, Route, Switch, useHistory} from 'react-router-dom';
 import NavBar from './components/Navbar';
-import { Home, Profile, SignUp, Login, CreatePost, UserProfile, SubscribedUserPost } from './components/screens'
+import { Home, Profile, SignUp, Login, CreatePost,
+  UserProfile, SubscribedUserPost, Reset, Newpassword } from './components/screens'
 import { reducer, initialState } from './reducers/userReducer'
 import './App.css';
 
@@ -15,7 +16,9 @@ const Routing = () => {
     if(user) {
       dispatch({type: 'USER', payload: user})
     }else {
-      history.push('/login');
+      if(!history.location.pathname.startsWith('/reset')) {
+        history.push('/login');
+      }
     }
   }, [])
   return (
@@ -40,6 +43,12 @@ const Routing = () => {
       </Route>
       <Route path="/myfollowingpost">
         <SubscribedUserPost />
+      </Route>
+      <Route exact path="/reset">
+        <Reset />
+      </Route>
+      <Route path="/reset/:token">
+        <Newpassword />
       </Route>
     </Switch>
   )
